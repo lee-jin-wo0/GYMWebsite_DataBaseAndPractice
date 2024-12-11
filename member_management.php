@@ -67,42 +67,36 @@ oci_close($connect);
 <?php endif; ?>
 
 <main>
-    <section class="member-management-banner">
-        <h1>Member Management</h1>
-        <p>Register new members or remove existing members from the system.</p>
-    </section>
-
     <section class="member-registration">
-    <h2>회원 등록</h2>
-    <form method="post">
-        <label for="member_id">아이디:</label>
-        <input type="text" name="member_id" id="member_id" required>
-        
-        <label for="membership_code">멤버십 코드:</label>
-        <input type="number" name="membership_code" id="membership_code" required min="0">
-        
-        <label for="locker_number">락커 번호:</label>
-        <input type="number" name="locker_number" id="locker_number" min="0">
-        
-        <label for="member_pwd">비밀번호:</label>
-        <input type="password" name="member_pwd" id="member_pwd" required>
-        
-        <label for="name">이름:</label>
-        <input type="text" name="name" id="name" required>
-        
-        <label for="gender">성별:</label>
-        <select name="gender" id="gender" required>
-            <option value="M">남</option>
-            <option value="F">여</option>
-        </select>
-        
-        <label for="member_phone_number">전화번호:</label>
-        <input type="text" name="member_phone_number" id="member_phone_number" required>
+        <h2>회원 등록</h2>
+        <form method="post">
+            <label for="member_id">아이디:</label>
+            <input type="text" name="member_id" id="member_id" required>
+            
+            <label for="membership_code">멤버십 코드:</label>
+            <input type="number" name="membership_code" id="membership_code" required min="0">
+            
+            <label for="locker_number">락커 번호:</label>
+            <input type="number" name="locker_number" id="locker_number" min="0">
+            
+            <label for="member_pwd">비밀번호:</label>
+            <input type="password" name="member_pwd" id="member_pwd" required>
+            
+            <label for="name">이름:</label>
+            <input type="text" name="name" id="name" required>
+            
+            <label for="gender">성별:</label>
+            <select name="gender" id="gender" required>
+                <option value="M">남</option>
+                <option value="F">여</option>
+            </select>
+            
+            <label for="member_phone_number">전화번호:</label>
+            <input type="text" name="member_phone_number" id="member_phone_number" required>
 
-        <button type="submit" name="register">회원 등록</button>
-    </form>
-</section>
-
+            <button type="submit" name="register">회원 등록</button>
+        </form>
+    </section>
 
     <section class="member-deletion">
         <h2>회원 탈퇴</h2>
@@ -121,36 +115,30 @@ oci_close($connect);
 <?php include('footer.php'); ?>
 
 <style>
-.member-management-banner {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    width: 80%;
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
     margin: 20px auto;
+    width: 90%;
 }
 
-.member-management-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.member-management-banner p {
-    font-size: 1.2rem;
-    color: #ddd;
+section.member-registration,
+section.member-deletion {
+    width: 40%;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 form {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    gap: 10px;
 }
 
 label {
@@ -161,51 +149,37 @@ label {
 
 input, select {
     width: 100%;
-    padding: 15px;
-    border: none;
-    border-bottom: 2px solid #333;
-    font-size: 16px;
-    background: transparent;
-    color: #333;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
     box-sizing: border-box;
 }
 
 input:focus, select:focus {
     outline: none;
-    border-bottom: 2px solid #000;
+    border-color: #333;
 }
 
 button {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     background-color: #000;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: #555;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
-.member-registration h2, .member-deletion h2 {
-    font-size: 1.8rem;
+h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
-.member-registration form, .member-deletion form {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 </style>
+
